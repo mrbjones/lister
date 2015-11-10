@@ -33,4 +33,4 @@ var server = http.createServer(function(request, response) {
 
   var absPath = "./" + filePath;
   serverWorking(response, absPath);
-});
+}).listen(process.env.VCAP_APP_PORT);
