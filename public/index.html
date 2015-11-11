@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
     <head>
         <title>Blog</title>
         <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
@@ -10,6 +10,13 @@
           
         </div>
         <div id="content">
+            
+            
+      <input type="text" ng-model="yourName" placeholder="Enter a name here">
+      <hr>
+      <h1>Hello {{yourName}}!</h1>
+            
+            
          </div>
     </body>
 </html>
