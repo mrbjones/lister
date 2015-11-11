@@ -4,22 +4,14 @@
         <title>Helloooo!</title>
         <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-      
     </head>
-
-    <body onload=getHellor();>
-        <div id="header">
-          
-        </div>
-        <div id="content">
-            
-            
-      <input type="text" ng-model="yourName" placeholder="Enter a name here">
+<body>
+<div id="content">
+     <input type="text" ng-model="yourName" placeholder="Enter a name here">      <h1>Hello {{yourName}}!</h1>
       <hr>
-      <h1>Hello {{yourName}}!</h1>
-      <div ng-app="myApp" ng-controller="customersCtrl"> 
-
+<div ng-app="myApp" ng-controller="customersCtrl"> 
 <ul>
+    <li>Countries</li>
   <li ng-repeat="x in names">
     {{ x.Name + ', ' + x.Country }}
   </li>
