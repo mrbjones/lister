@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html ng-app>
     <head>
-        <title>Blog</title>
+        <title>Helloooo!</title>
         <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     </head>
-    <script>
-    Function getHello() {
+<script type='text/javascript'>
+function getHellor() {
         $.ajax({
   url: "getHello.js",
-  data: {
-    zipcode: 97201
-  },
+  data: {  },
   success: function( data ) {
     $( "#Hello-div" ).html( "<strong>" + data + "</strong> degrees" );
   }
 });
-    }    
-        
-         </script>
-    <body onload=getHello();>
+}    
+</script>
+    <body onload=getHellor();>
         <div id="header">
           
         </div>
@@ -30,7 +27,7 @@
       <input type="text" ng-model="yourName" placeholder="Enter a name here">
       <hr>
       <h1>Hello {{yourName}}!</h1>
-       <div id=#Hello-div></div>     
+       <div id=#Hello-div>Hi</div>     
             
          </div>
     </body>
