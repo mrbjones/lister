@@ -4,8 +4,23 @@
         <title>Blog</title>
         <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     </head>
-    <body>
+    <script>
+    Function getHello() {
+        $.ajax({
+  url: "/gethello.js",
+  data: {
+    zipcode: 97201
+  },
+  success: function( data ) {
+    $( "#Hello-div" ).html( "<strong>" + data + "</strong> degrees" );
+  }
+});
+    }    
+        
+         </script>
+    <body onload=getHello();>
         <div id="header">
           
         </div>
@@ -15,7 +30,7 @@
       <input type="text" ng-model="yourName" placeholder="Enter a name here">
       <hr>
       <h1>Hello {{yourName}}!</h1>
-            
+       <div id=#Hello-div></div>     
             
          </div>
     </body>
