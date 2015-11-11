@@ -23,7 +23,7 @@
 <script>
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
-    $http.get("getCountry.js")
+    $http.get("http://withdivs.uswest.appfog.ctl.io/getCountry.js")
     .success(function(response) {$scope.names = response.records;});
 });
 </script>
