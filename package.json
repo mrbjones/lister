@@ -5,6 +5,6 @@
     },
      "dependencies" : {
     "mime" : "~1.2.7",
-    "orchestrate": "^0.4.6",
+    "orchestrate": "^0.4.6"
   }
 }
