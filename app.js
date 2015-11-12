@@ -14,7 +14,7 @@ orchestrate_api_url = node.credentials.ORCHESTRATE_API_HOST
 
 http.createServer(function(request, response) {
   response.writeHead(200, {"Content-Type": "text/plain"});
-  response.write(orchestrate)
+  response.write(orchestrate_api_key)
   response.write("Hello World");
   response.end();
 }).listen(process.env.VCAP_APP_PORT);
