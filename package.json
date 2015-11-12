@@ -4,6 +4,7 @@
         "node": "0.10.38"
     },
      "dependencies" : {
-    "mime" : "~1.2.7"
+    "mime" : "~1.2.7",
+    "orchestrate": "^0.4.6",
   }
 }
