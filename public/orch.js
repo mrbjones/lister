@@ -1,7 +1,7 @@
 
 module.exports = 
 {
-  getkey: function (name, surname) 
+  getkey: function () 
   {
   var orchestrate = require('orchestrate');
 
@@ -13,6 +13,7 @@ if (process.env.VCAP_SERVICES) {
     orchestrate_api_key = node.credentials.ORCHESTRATE_API_KEY
     orchestrate_api_url = node.credentials.ORCHESTRATE_API_HOST
   }
+  return orchestrate_api_key
 }
 };
 
