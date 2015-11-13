@@ -32,6 +32,7 @@ db.put('cars', 'brettsvwgti', {
  cb(err);
  var1='failure';
 })
+
 cb(var1);
 };
 
@@ -39,9 +40,8 @@ http.createServer(function(request, response) {
   response.writeHead(200, {"Content-Type": "text/plain"});
   response.write("start");
  putter( function(cb)
- {response.write(cb);     })
- .then(function(res){ response.write('end');})
- .then(function(res){ response.end();});
+ {response.write(cb);response.end();})
+
 
   
   
