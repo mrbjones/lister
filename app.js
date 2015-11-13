@@ -12,12 +12,7 @@ orchestrate_api_endpoint = node.credentials.ORCHESTRATE_API_HOST
 };
 var db = require("orchestrate")(orchestrate_api_key,orchestrate_api_endpoint);
 
-
-
-
-
 function putter(cb) {
-var1=''
 db.put('cars', 'brettsvwgti', {
   "make": "Volkswagen",
   "model": "GTI S",
@@ -26,21 +21,14 @@ db.put('cars', 'brettsvwgti', {
 },false)
 .then(function (res) {
  cb('success :!');
- var1='success';
 })
-.fail(function (err) {
- cb(err);
- var1='failure';
-})
-
-cb(var1);
 };
 
 http.createServer(function(request, response) {
   response.writeHead(200, {"Content-Type": "text/plain"});
   response.write("start");
- putter( function(cb)
- {response.write(cb);response.end();})
+ putter( function(response)
+ {response.write(response);response.end();})
 
 
   
