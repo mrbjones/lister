@@ -1,8 +1,5 @@
 
 var http = require("http");
-var db = require("orchestrate");
-
-
 if (process.env.VCAP_SERVICES) 
 {
 var services = JSON.parse(process.env.VCAP_SERVICES);
@@ -13,6 +10,11 @@ orchestrate_api_key = node.credentials.ORCHESTRATE_API_KEY
 orchestrate_api_endpoint = node.credentials.ORCHESTRATE_API_HOST
   }
 };
+var db = require("orchestrate")(orchestrate_api_key,orchestrate_api_endpoint);
+
+
+
+
 
 function putter(cb) {
 var1=''
