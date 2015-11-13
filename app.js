@@ -1,5 +1,7 @@
 
 var http = require("http");
+var http = require("orchestrate");
+
 
 if (process.env.VCAP_SERVICES) 
 {
