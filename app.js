@@ -27,7 +27,6 @@ db.put('cars', 'brettsvwgti', {
 .then(function (cb) {
  cb('success :!');
 })
-})
 .fail(function (err) {
  cb(err);
 })
@@ -35,7 +34,7 @@ db.put('cars', 'brettsvwgti', {
 
 http.createServer(function(request, response) {
   response.writeHead(200, {"Content-Type": "text/plain"});
-  response.write('start<br>')
+  
  putter( function(putt1)
  {response.write(putt1);  response.end();    });
 
