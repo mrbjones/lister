@@ -14,7 +14,7 @@ orchestrate_api_endpoint = node.credentials.ORCHESTRATE_API_HOST
   }
 };
 
-function putter() {
+function putter(a, cb) {
 db.put('cars', 'brettsvwgti', {
   "make": "Volkswagen",
   "model": "GTI S",
@@ -22,16 +22,17 @@ db.put('cars', 'brettsvwgti', {
   "year": "2015"
 })
 .then(function (result) {
- response.write('success !')
+ cb('success !')
 })
 .fail(function (err) {
- response.write('fail /')
+ cb('fail /')
 })
 }
 
 http.createServer(function(request, response) {
   response.writeHead(200, {"Content-Type": "text/plain"});
- putter();
-  response.write(" // ");
-  response.end();
+ putter("a", function(putt1)
+ {response.write(putt1);response.write(" // ");response.end();     });
+  
+  
 }).listen(process.env.VCAP_APP_PORT);
