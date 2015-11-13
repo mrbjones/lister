@@ -21,10 +21,10 @@ db.put('cars', 'brettsvwgti', {
   "color": "Black",
   "year": "2015"
 })
-.then(function (result) {
+.then(function (cb) {
  cb('success !')
 })
-.fail(function (err) {
+.fail(function (cb) {
  cb('fail /')
 })
 }
