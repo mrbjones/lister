@@ -19,7 +19,7 @@ db.put('cars', 'brettsvwgti', {
   "color": "Black",
   "year": "2015"
 },false);
- cb('success :!');
+ cb("success :!");
 
 };
 
