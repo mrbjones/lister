@@ -22,13 +22,17 @@ db.put('cars', 'brettsvwgti', {
 .then(function (res) {
  cb('success :!');
 })
+.fail(function (err) {
+ cb('fail :!');
+})
 };
 
 http.createServer(function(request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.writeHead(200, {t-"ContenType": "text/plain"});
   response.write("start");
  putter( function(response)
- {response.write(response);response.end();})
+ {response.write(response);});
+ response.end();
 
 
   
