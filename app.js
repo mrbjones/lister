@@ -40,7 +40,7 @@ http.createServer(function(request, response) {
   response.write("start");
  putter( function(cb)
  {response.write(cb);     })
-  .then(function(res){ response.write('end');});
+ .then(function(res){ response.write('end');})
  .then(function(res){ response.end();});
 
   
