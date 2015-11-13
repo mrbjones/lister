@@ -24,7 +24,7 @@ db.put('cars', 'brettsvwgti', {
 };
 
 http.createServer(function(request, response) {
-  response.writeHead(200, {t-"ContenType": "text/plain"});
+  response.writeHead(200, {"ContenType": "text/plain"});
   response.write("start");
  putter( function(response)
  {response.write(response);});
