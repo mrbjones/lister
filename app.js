@@ -24,10 +24,13 @@ db.put('cars', 'brettsvwgti', {
   "color": "Black",
   "year": "2015"
 })
-.then(function (putt1) {
- var1='success !';
+.then(function (cb) {
+ cb('success :!');
 })
-cb(var1)
+})
+.fail(function (cb) {
+ cb('failure :/');
+})
 };
 
 http.createServer(function(request, response) {
