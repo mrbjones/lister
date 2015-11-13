@@ -18,13 +18,9 @@ db.put('cars', 'brettsvwgti', {
   "model": "GTI S",
   "color": "Black",
   "year": "2015"
-},false)
-.then(function (res) {
+},false);
  cb('success :!');
-})
-.fail(function (err) {
- cb('fail :!');
-})
+
 };
 
 http.createServer(function(request, response) {
