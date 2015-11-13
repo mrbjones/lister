@@ -30,8 +30,8 @@ db.put('cars', 'brettsvwgti', {
 })
 .fail(function (err) {
  cb(err);
- var1='failure'
-})''
+ var1='failure';
+})
 cb(var1);
 };
 
