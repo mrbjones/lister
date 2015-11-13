@@ -28,8 +28,8 @@ db.put('cars', 'brettsvwgti', {
  cb('success :!');
 })
 })
-.fail(function (cb) {
- cb('failure :/');
+.fail(function (err) {
+ cb(err);
 })
 };
 
