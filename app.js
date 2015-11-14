@@ -34,7 +34,7 @@ function getter(cb) {
 db.list('cars')
 .then(function (result) {
   var items = result.body.results;
-  cb(items)
+  cb(JSON.stringify(items))
 })
 };
 
