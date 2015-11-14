@@ -1,5 +1,6 @@
 
 var http = require("http");
+var express = require('express');
 if (process.env.VCAP_SERVICES) 
 {
 var services = JSON.parse(process.env.VCAP_SERVICES);
