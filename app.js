@@ -1,6 +1,10 @@
 
 var http = require("http");
 var express = require('express');
+var url = require('url');
+
+
+
 if (process.env.VCAP_SERVICES) 
 {
 var services = JSON.parse(process.env.VCAP_SERVICES);
@@ -13,9 +17,7 @@ orchestrate_api_endpoint = node.credentials.ORCHESTRATE_API_HOST
 };
 var db = require("orchestrate")(orchestrate_api_key,orchestrate_api_endpoint);
 
-var query = require('url').parse(req.url,true).query;
-var option = query.option;
-if (!option){ option="g"};
+
 
 
 function putter(cb) {
@@ -39,6 +41,11 @@ db.list('collection')
 
 
 http.createServer(function(request, response) {
+    var option = url.parse(req.url,true).query;
+   if (!option) { option="g" };
+    
+    
+    
   response.writeHead(200, {"ContenType": "text/plain"});
   response.write("start");
  
