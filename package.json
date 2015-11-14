@@ -4,7 +4,8 @@
         "node": "0.10.38"
     },
      "dependencies": {
-        "orchestrate": "git://github.com/orchestrate-io/orchestrate.js.git"
+        "orchestrate": "git://github.com/orchestrate-io/orchestrate.js.git",
+        "express": ">= 1.2.0"
      }
 }
 
