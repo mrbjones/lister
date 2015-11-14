@@ -14,6 +14,8 @@ var db = require("orchestrate")(orchestrate_api_key,orchestrate_api_endpoint);
 
 var query = require('url').parse(req.url,true).query;
 var option = query.option;
+if (!option){ option="g"};
+
 
 function putter(cb) {
 db.put('cars', 'brettsvwgti', {
@@ -43,7 +45,7 @@ http.createServer(function(request, response) {
 { putter( function(resp)
  {response.write("<br>" + resp);});
 } 
-  if (option isNull || option == "g")
+  if (option option == "g")
 { gettter( function(resp)
  {response.write("<br>" + resp);});
 } 
