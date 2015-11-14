@@ -31,7 +31,7 @@ db.put('cars', 'brettsvwgti', {
 };
 
 function getter(cb) {
-db.list('collection')
+db.list('cars')
 .then(function (result) {
   var items = result.body.results;
   cb(items)
@@ -43,20 +43,22 @@ db.list('collection')
 http.createServer(function(request, response) {
     var queryData = url.parse(request.url, true).query;
 
-   response.write("opt="+queryData.o+"<br>")
-   var option=queryData.o;
-    
+  
+
     
   response.writeHead(200, {"ContenType": "text/plain"});
   response.write("start");
+   response.write("opt="+queryData.o+"<br>");
+ if (queryData.o=="g"){response.write("bingo!");};
  
- if (option == "p")
+ 
+ if (queryData.o == "p")
 { putter( function(resp)
  {response.write("<br>" + resp);
  response.end();
  });
 } 
-  if (option == "g")
+  if (queryData.o == "g")
 { getter( function(resp)
  {response.write("<br>" + resp);
      response.end();
