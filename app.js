@@ -52,17 +52,21 @@ http.createServer(function(request, response) {
  
  if (option == "p")
 { putter( function(resp)
- {response.write("<br>" + resp);});
+ {response.write("<br>" + resp);}
+ response.end();
+ );
 } 
   if (option == "g")
 { getter( function(resp)
- {response.write("<br>" + resp);});
+ {response.write("<br>" + resp);
+     response.end();
+ });
 } 
  
  
  
  
- response.end();
+ 
 
 
   
