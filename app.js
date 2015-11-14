@@ -55,7 +55,7 @@ http.createServer(function(request, response) {
  {response.write("<br>" + resp);});
 } 
   if (option == "g")
-{ gettter( function(resp)
+{ getter( function(resp)
  {response.write("<br>" + resp);});
 } 
  
