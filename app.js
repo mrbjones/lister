@@ -1,7 +1,7 @@
 
 var http = require("http");
 var express = require('express');
- url = require('url');
+var url = require('url');
 
 
 
@@ -41,7 +41,7 @@ db.list('collection')
 
 
 http.createServer(function(request, response) {
-    var option = url.parse(req.url,true).query;
+    var option = url.parse(request.url,true).query;
    if (!option) { option="g" };
     
     
