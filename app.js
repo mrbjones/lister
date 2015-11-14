@@ -45,7 +45,7 @@ http.createServer(function(request, response) {
 { putter( function(resp)
  {response.write("<br>" + resp);});
 } 
-  if (option option == "g")
+  if (option == "g")
 { gettter( function(resp)
  {response.write("<br>" + resp);});
 } 
