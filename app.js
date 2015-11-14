@@ -41,11 +41,10 @@ db.list('collection')
 
 
 http.createServer(function(request, response) {
-    var url_parts = url.parse(request.url, true);
-     var query = url_parts.query;
+    var queryData = url.parse(request.url, true).query;
 
-   response.write("opt="+query+"<br>")
-    
+   response.write("opt="+queryData.o+"<br>")
+   var option=queryData.o;
     
     
   response.writeHead(200, {"ContenType": "text/plain"});
