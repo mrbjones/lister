@@ -41,9 +41,10 @@ db.list('collection')
 
 
 http.createServer(function(request, response) {
-    var option = request.url.query;
-   if (!option) { option="g" };
-   response.write("opt="+option+"<br>")
+    var url_parts = url.parse(request.url, true);
+     var query = url_parts.query;
+
+   response.write("opt="+query+"<br>")
     
     
     
