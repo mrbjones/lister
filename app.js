@@ -13,7 +13,6 @@ orchestrate_api_endpoint = node.credentials.ORCHESTRATE_API_HOST
 var db = require("orchestrate")(orchestrate_api_key,orchestrate_api_endpoint);
 
 var query = require('url').parse(req.url,true).query;
-var id = query.id;
 var option = query.option;
 
 function putter(cb) {
@@ -40,11 +39,11 @@ http.createServer(function(request, response) {
   response.writeHead(200, {"ContenType": "text/plain"});
   response.write("start");
  
- if (option isNull || option == "put")
+ if (option == "p")
 { putter( function(resp)
  {response.write("<br>" + resp);});
 } 
-  if (option isNull || option == "get")
+  if (option isNull || option == "g")
 { gettter( function(resp)
  {response.write("<br>" + resp);});
 } 
