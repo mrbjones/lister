@@ -12,6 +12,10 @@ orchestrate_api_endpoint = node.credentials.ORCHESTRATE_API_HOST
 };
 var db = require("orchestrate")(orchestrate_api_key,orchestrate_api_endpoint);
 
+var query = require('url').parse(req.url,true).query;
+var id = query.id;
+var option = query.option;
+
 function putter(cb) {
 db.put('cars', 'brettsvwgti', {
   "make": "Volkswagen",
@@ -20,14 +24,34 @@ db.put('cars', 'brettsvwgti', {
   "year": "2015"
 },false);
  cb("success :!");
-
 };
+
+function getter(cb) {
+db.list('collection')
+.then(function (result) {
+  var items = result.body.results;
+  cb(items)
+})
+};
+
+
 
 http.createServer(function(request, response) {
   response.writeHead(200, {"ContenType": "text/plain"});
   response.write("start");
- putter( function(resp)
- {response.write(resp);});
+ 
+ if (option isNull || option == "put")
+{ putter( function(resp)
+ {response.write("<br>" + resp);});
+} 
+  if (option isNull || option == "get")
+{ gettter( function(resp)
+ {response.write("<br>" + resp);});
+} 
+ 
+ 
+ 
+ 
  response.end();
 
 
