@@ -54,7 +54,7 @@ if (queryData.o =="p" || queryData.o =="g")
 if (queryData.o !="p" && queryData.o !="g")
 {
 response.writeHeader(200, {"Content-Type": "text/html"});
-response.write("<html><head><title>Brett's Car-o-rama!</title><script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js\"></head><body style=bg-color:darkgray;>");
+response.write("<html><head><title>Brett's Car-o-rama!</title><script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js\"></script></head><body style=bg-color:darkgray;>");
 response.write("<br><br><div id=title style=width:500px;align:center;bg-color:silver;font-size:22px;font-family:verdana>Brett's Car-o-rama!</div><br>")
 response.write("<br><br><div id=main style=width:500px;align:center;bg-color:silver;font-size:22px;font-family:verdana>")
 
