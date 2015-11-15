@@ -39,20 +39,20 @@ if (queryData.o =="p" || queryData.o =="g")
 */
  if (queryData.o == "p")
 { putter( function(resp)
- {response.write("<br>" + resp);
+ {response.write(resp);response.end();
  });
 } 
   if (queryData.o == "g")
 { getter( function(resp)
- { response.write("<br>" + resp);
+ { response.write(resp);response.end();
  });
 } 
 if (queryData.o !="p" && queryData.o !="g")
 {
 response.writeHead(200, {"Content-Type": "text/html"});
-response.write("<form name=myf1><br>make<input name=make><br>model<input name=model><br>year<input name=year><br>color<input name=color><br><input type=submit>");
+response.write("<form name=myf1><br>make<input name=make><br>model<input name=model><br>year<input name=year><br>color<input name=color><br><input type=submit>");response.end();
 }
-response.end();
+
  
  
 
