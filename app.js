@@ -19,7 +19,7 @@ db.put('cars', 'brettsvwgti', {
   "make": cma,
   "model": cmo,
   "color": cco,
-  "year": ccy
+  "year": cy
 },false);
  cb("success :!");
 };
