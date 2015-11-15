@@ -33,7 +33,7 @@ db.list('cars')
 
 http.createServer(function(request, response) {
     var queryData = url.parse(request.url, true).query;
-  response.writeHead(200, {"ContenType": "text/plain"});
+
 
  if (queryData.o == "p")
 { putter( function(resp)
@@ -42,11 +42,16 @@ http.createServer(function(request, response) {
 } 
   if (queryData.o == "g")
 { getter( function(resp)
- {response.write("<br>" + resp);
+ {
+     response.writeHead(200, {"Content-Type": "text/plain"});
+     response.write("<br>" + resp);
  });
 } 
- 
+if (queryData.0 !="p" && queryData.o !="g")
+{
+response.writeHead(200, {"Content-Type": "text/html"});
 response.write("<form name=myf1><br>make<input name=make><br>model<input name=model><br>year<input name=year><br>color<input name=color><br><input type=submit>");
+}
 response.end();
  
  
