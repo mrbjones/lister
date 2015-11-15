@@ -15,12 +15,9 @@ orchestrate_api_endpoint = node.credentials.ORCHESTRATE_API_HOST
 var db = require("orchestrate")(orchestrate_api_key,orchestrate_api_endpoint);
 
 function putter(cma,cmo,cy,cco,cb) {
-db.put('cars', 'brettsvwgti', {
-  "make": cma,
-  "model": cmo,
-  "color": cco,
-  "year": cy
-},false);
+var jsonString = "{\"make\":\"" +cma+ ""\", \"model\":\""+cmo+""\", \"year\":\""+cy+""\", \"color\":\""+cco+""\"}";
+var jsonObj = JSON.parse(jsonString);
+db.put('cars', 'brettsvwgti', jsonObj, false);
  cb("success :!");
 };
 
