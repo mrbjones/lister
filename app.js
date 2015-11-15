@@ -33,9 +33,7 @@ db.list('cars')
 
 http.createServer(function(request, response) {
     var queryData = url.parse(request.url, true).query;
-
   response.writeHead(200, {"ContenType": "text/plain"});
-   response.write("opt="+queryData.o+"<br>");
 
  if (queryData.o == "p")
 { putter( function(resp)
@@ -48,12 +46,7 @@ http.createServer(function(request, response) {
  });
 } 
  
-response.write("<form name=myf1><br>
-make<input name=make><br>
-model<input name=model><br>
-year<input name=year><br>
-color<input name=color><br>
-<input type=submit>")
+response.write("<form name=myf1><br>make<input name=make><br>model<input name=model><br>year<input name=year><br>color<input name=color><br><input type=submit>");
 response.end();
  
  
