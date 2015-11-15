@@ -25,7 +25,7 @@ function getter(cb) {
 db.list('cars')
 .then(function (result) {
   var items = result.body.results;
-  cb(JSON.stringify(items))
+  cb(JSON.stringify(items, ['key','make','model','year','color']))
 })};
 
 http.createServer(function(request, response) {
@@ -54,7 +54,7 @@ if (queryData.o =="p" || queryData.o =="g")
 if (queryData.o !="p" && queryData.o !="g")
 {
 response.writeHead(200, {"Content-Type": "text/html"});
-response.write("<form name=myf1><table><tr><td>make</td><td><input name=make></td></tr><tr><td>model</td><td><input name=model></td></tr><tr><td>year</td><td><input name=year></td></tr><tr><td>color</td><td><input name=color></td></tr><tr><td colspan=2><input type=submit></td></tr></table>");response.end();
+response.write("<form name=myf1><table><tr><td>name</td><td><input name=key></td></tr><tr><td>make</td><td><input name=make></td></tr><tr><td>model</td><td><input name=model></td></tr><tr><td>year</td><td><input name=year></td></tr><tr><td>color</td><td><input name=color></td></tr><tr><td colspan=2><input type=submit></td></tr></table>");response.end();
 }
 
  
