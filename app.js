@@ -54,7 +54,18 @@ if (queryData.o =="p" || queryData.o =="g")
 if (queryData.o !="p" && queryData.o !="g")
 {
 response.writeHead(200, {"Content-Type": "text/html"});
-response.write("<form name=myf1><table><tr><td>name</td><td><input name=key></td></tr><tr><td>make</td><td><input name=make></td></tr><tr><td>model</td><td><input name=model></td></tr><tr><td>year</td><td><input name=year></td></tr><tr><td>color</td><td><input name=color></td></tr><tr><td colspan=2><input type=submit></td></tr></table>");response.end();
+response.write("<html><head><title>Brett's Car-o-rama!</title><script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js\"></head><body style=bg-color:darkgray;>");
+response.write("<br><br><div id=title style=width:500px;align:center;bg-color:silver;font-size:22px;font-family:verdana>Brett's Car-o-rama!</div><br>")
+response.write("<br><br><div id=main style=width:500px;align:center;bg-color:silver;font-size:22px;font-family:verdana>")
+
+
+response.write("</div>")
+response.write("<div id=footer style=width:500px;align:center;bg-color:silver;font-size:22px;font-family:verdana>")
+response.write("<form name=myf1 ><table><tr><td>name</td><td><input name=key><input type=hidden name=o value='p'></td></tr><tr><td>make</td><td><input name=make></td></tr><tr><td>model</td><td><input name=model></td></tr><tr><td>year</td><td><input name=year></td></tr><tr><td>color</td><td><input name=color></td></tr><tr><td colspan=2><input type=submit></td></tr></table></form>");
+response.write("</div>")
+response.end();
+    
+    
 }
 
  
