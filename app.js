@@ -34,6 +34,8 @@ db.list('cars')
 http.createServer(function(request, response) {
     var queryData = url.parse(request.url, true).query;
 
+if (queryData.o =="p" || queryData.o =="g")
+{  response.writeHead(200, {"Content-Type": "text/plain"});};
 
  if (queryData.o == "p")
 { putter( function(resp)
@@ -42,9 +44,7 @@ http.createServer(function(request, response) {
 } 
   if (queryData.o == "g")
 { getter( function(resp)
- {
-     response.writeHead(200, {"Content-Type": "text/plain"});
-     response.write("<br>" + resp);
+ { response.write("<br>" + resp);
  });
 } 
 if (queryData.o !="p" && queryData.o !="g")
