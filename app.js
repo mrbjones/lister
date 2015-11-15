@@ -25,7 +25,7 @@ function getter(cb) {
 db.list('cars')
 .then(function (result) {
   var items = result.body.results;
-  cb(JSON.stringify(items, [value].[model]))
+  cb(JSON.stringify(items))
 })};
 
 http.createServer(function(request, response) {
