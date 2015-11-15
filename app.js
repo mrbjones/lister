@@ -14,12 +14,12 @@ orchestrate_api_endpoint = node.credentials.ORCHESTRATE_API_HOST
 };
 var db = require("orchestrate")(orchestrate_api_key,orchestrate_api_endpoint);
 
-function putter(cb) {
+function putter(cma,cmo,cy,cco,cb) {
 db.put('cars', 'brettsvwgti', {
-  "make": "Volkswagen",
-  "model": "GTI S",
-  "color": "Black",
-  "year": "2015"
+  "make": cma,
+  "model": cmo,
+  "color": cco,
+  "year": ccy
 },false);
  cb("success :!");
 };
@@ -38,7 +38,13 @@ if (queryData.o =="p" || queryData.o =="g")
 {  response.writeHead(200, {"Content-Type": "text/plain"});};
 */
  if (queryData.o == "p")
-{ putter( function(resp)
+{ 
+    cmake=queryData.make;
+    cmodel=queryData.model
+    cyear=queryData.year
+    ccolor=queryData.color
+    
+    putter(cmake,cmodel,cyear,ccolor, function(resp)
  {response.write(resp);response.end();
  });
 } 
