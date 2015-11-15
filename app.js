@@ -58,6 +58,7 @@ response.write("<html><head><title>Brett's Car-o-rama!</title><script src=\"http
 response.write("<br><br><div id=title style=width:500px;align:center;bg-color:silver;font-size:22px;font-family:verdana>Brett's Car-o-rama!</div><br>")
 response.write("<br><br><div id=main style=width:500px;align:center;bg-color:silver;font-size:22px;font-family:verdana>")
 
+response.write("Here's some stuff!")
 
 response.write("</div>")
 response.write("<div id=footer style=width:500px;align:center;bg-color:silver;font-size:22px;font-family:verdana>")
