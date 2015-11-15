@@ -33,10 +33,10 @@ db.list('cars')
 
 http.createServer(function(request, response) {
     var queryData = url.parse(request.url, true).query;
-
+/*
 if (queryData.o =="p" || queryData.o =="g")
 {  response.writeHead(200, {"Content-Type": "text/plain"});};
-
+*/
  if (queryData.o == "p")
 { putter( function(resp)
  {response.write("<br>" + resp);
