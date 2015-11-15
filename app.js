@@ -14,10 +14,10 @@ orchestrate_api_endpoint = node.credentials.ORCHESTRATE_API_HOST
 };
 var db = require("orchestrate")(orchestrate_api_key,orchestrate_api_endpoint);
 
-function putter(cma,cmo,cy,cco,cb) {
+function putter(keyer,cma,cmo,cy,cco,cb) {
 var jsonString = "{\"make\":\"" +cma+ "\", \"model\":\""+cmo+"\", \"year\":\""+cy+"\", \"color\":\""+cco+"\"}";
 var jsonObj = JSON.parse(jsonString);
-db.put('cars', 'brettsvwgti', jsonObj, false);
+db.put('cars', keyer, jsonObj, false);
  cb("success :!");
 };
 
@@ -40,8 +40,9 @@ if (queryData.o =="p" || queryData.o =="g")
     cmodel=queryData.model
     cyear=queryData.year
     ccolor=queryData.color
+    ckey=queryData.key
     
-    putter(cmake,cmodel,cyear,ccolor, function(resp)
+    putter(ckey,cmake,cmodel,cyear,ccolor, function(resp)
  {response.write(resp);response.end();
  });
 } 
