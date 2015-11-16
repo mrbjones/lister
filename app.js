@@ -74,7 +74,7 @@ response.write("<script>  angular.module('formExample', [])    .controller('Exam
 */
 
 response.write("</div>")
-response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {$scope.update = function(carz) { $http({     url: user.details_path,     method: \"GET\",    params: {o: 'p', key=carz.key.value, make=carz.make.value, model=carz.model.value, color=carz.color, year=carz.year.value} });     }]);")
+response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) { alert(carz.make);alert(carz.make.value);$scope.update = function(carz) { $http({     url: user.details_path,     method: \"GET\",    params: {o: 'p', key=carz.key.value, make=carz.make.value, model=carz.model.value, color=carz.color, year=carz.year.value} });     }]);")
 
 
 
