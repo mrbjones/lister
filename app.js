@@ -74,7 +74,16 @@ response.write("<form  novalidate class=\"simple-form\" >name<input name=key ng-
 
 response.write("<pre>user = {{carz | json}}</pre><br>  <pre>master = {{master | json}}</pre>");
 response.write("</div>")
+/*
 response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {   $scope.master = {};$scope.update = function(carz) { $scope.master = angular.copy(carz);};$scope.reset = function() {   $scope.carz = angular.copy($scope.master);}; $scope.reset();}]);</script>");
+
+
+response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {$scope.update = function(carz) { var k1 = angular.copy(carz.key);   var m1 = angular.copy(carz.make);  var m2 = angular.copy(carz.model);  var c1 = angular.copy(carz.color); var y1= angular.copy(carz.year);     };     }]);")
+*/
+response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {$scope.update = function(carz) { $http({     url: user.details_path,     method: "GET",    params: {o: 'p', key=carz.key, make=carz.make, model=carz.model, color=carz.color, year=carz.year} });     }]);")
+
+
+
 response.end();
     
     
