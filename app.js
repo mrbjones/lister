@@ -54,7 +54,7 @@ if (queryData.o =="p" || queryData.o =="g")
 if (queryData.o !="p" && queryData.o !="g")
 {
 response.writeHeader(200, {"Content-Type": "text/html"});
-response.write("<html><head><title>Brett's Car-o-rama!</title><script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js\"></script>
+response.write("<html><head><title>Brett's Car-o-rama!</title><script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js\"></script>");
 response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {   $scope.master = {};$scope.update = function(carz) { $scope.master = angular.copy(carz);};$scope.reset = function() {   $scope.carz = angular.copy($scope.master);}; $scope.reset();}]);</script>");
 response.write("</head><body style=bg-color:darkgray;>");
 response.write("<br><br><div id=title style=width:500px;align:center;bg-color:silver;font-size:22px;font-family:verdana>Brett's Car-o-rama!</div><br>")
