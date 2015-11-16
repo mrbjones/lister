@@ -54,10 +54,10 @@ if (queryData.o =="p" || queryData.o =="g")
 if (queryData.o !="p" && queryData.o !="g")
 {
 response.writeHeader(200, {"Content-Type": "text/html"});
-response.write("<html><head><title>Brett's Car-o-rama!</title>  <script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js\"></script>");
+response.write("<!doctype html><html lang=\"en\"><head>  <meta charset=\"UTF-8\"><html><head><title>Brett's Car-o-rama!</title>  <script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js\"></script>");
 
 
-response.write("</head><body style=bg-color:darkgray; ng-app=\"formExample\">");
+response.write("</head><body ng-app=\"formExample\">");
 response.write("<br><br><div id=title>Brett's Car-o-rama!</div><br>")
 response.write("<br><br><div id=main >")
 
@@ -66,7 +66,7 @@ response.write("Here's some stuff!")
 response.write("</div>")
 response.write("<div ng-controller=\"ExampleController\" id=footer>")
 
-response.write("<form  novalidate class=\"simple-form\" name=myf1 ><table><tr><td>name</td><td><input name=key ng-model=\"carz.key\"><input type=hidden name=o value='p'  ng-model=\"carz.o\"></td></tr><tr><td>make</td><td><input name=make  ng-model=\"carz.make\"></td></tr><tr><td>model</td><td><input name=model  ng-model=\"carz.model\"></td></tr><tr><td>year</td><td><input name=year  ng-model=\"carz.year\"></td></tr><tr><td>color</td><td><input name=color  ng-model=\"carz.color\"></td></tr><tr><td colspan=2><input type=submit  ng-click=\"update(carz)\" value=\"Save\" ></td></tr></table></form>");
+response.write("<form  novalidate class=\"simple-form\" ><table><tr><td>name</td><td><input name=key ng-model=\"carz.key\"><input type=hidden name=o value='p'  ng-model=\"carz.o\"></td></tr><tr><td>make</td><td><input name=make  ng-model=\"carz.make\"></td></tr><tr><td>model</td><td><input name=model  ng-model=\"carz.model\"></td></tr><tr><td>year</td><td><input name=year  ng-model=\"carz.year\"></td></tr><tr><td>color</td><td><input name=color  ng-model=\"carz.color\"></td></tr><tr><td colspan=2><input type=submit  ng-click=\"update(carz)\" value=\"Save\" ></td></tr></table></form>");
 /*
 response.write("<form  novalidate class=\"simple-form\" >name<input name=key ng-model=\"carz.key\"><input type=hidden name=o value='p'  ng-model=\"carz.o\">make<input name=make  ng-model=\"carz.make\">model<input name=model  ng-model=\"carz.model\">year<input name=year  ng-model=\"carz.year\">color<input name=color  ng-model=\"carz.color\"><input type=button  ng-click=\"update(carz)\" value=\"Save\" ></form>");
 */
