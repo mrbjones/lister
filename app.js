@@ -80,7 +80,7 @@ response.write("<script>  angular.module('formExample', [])    .controller('Exam
 
 response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {$scope.update = function(carz) { var k1 = angular.copy(carz.key);   var m1 = angular.copy(carz.make);  var m2 = angular.copy(carz.model);  var c1 = angular.copy(carz.color); var y1= angular.copy(carz.year);     };     }]);")
 */
-response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {$scope.update = function(carz) { $http({     url: user.details_path,     method: "GET",    params: {o: 'p', key=carz.key, make=carz.make, model=carz.model, color=carz.color, year=carz.year} });     }]);")
+response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {$scope.update = function(carz) { $http({     url: user.details_path,     method: \"GET\",    params: {o: 'p', key=carz.key, make=carz.make, model=carz.model, color=carz.color, year=carz.year} });     }]);")
 
 
 
