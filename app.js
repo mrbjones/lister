@@ -70,10 +70,10 @@ response.write("<form  novalidate class=\"simple-form\" ><table><tr><td>name</td
 /*
 response.write("<form  novalidate class=\"simple-form\" >name<input name=key ng-model=\"carz.key\"><input type=hidden name=o value='p'  ng-model=\"carz.o\">make<input name=make  ng-model=\"carz.make\">model<input name=model  ng-model=\"carz.model\">year<input name=year  ng-model=\"carz.year\">color<input name=color  ng-model=\"carz.color\"><input type=button  ng-click=\"update(carz)\" value=\"Save\" ></form>");
 */
-response.write("</div>")
+
 
 response.write("<pre>user = {{carz | json}}</pre><br>  <pre>master = {{master | json}}</pre>");
-
+response.write("</div>")
 response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {   $scope.master = {};$scope.update = function(carz) { $scope.master = angular.copy(carz);};$scope.reset = function() {   $scope.carz = angular.copy($scope.master);}; $scope.reset();}]);</script>");
 response.end();
     
