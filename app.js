@@ -54,16 +54,20 @@ if (queryData.o =="p" || queryData.o =="g")
 if (queryData.o !="p" && queryData.o !="g")
 {
 response.writeHeader(200, {"Content-Type": "text/html"});
-response.write("<html><head><title>Brett's Car-o-rama!</title><script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js\"></script></head><body style=bg-color:darkgray;>");
+response.write("<html><head><title>Brett's Car-o-rama!</title><script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js\"></script>
+response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {   $scope.master = {};$scope.update = function(carz) { $scope.master = angular.copy(carz);};$scope.reset = function() {   $scope.carz = angular.copy($scope.master);}; $scope.reset();}]);</script>");
+response.write("</head><body style=bg-color:darkgray;>");
 response.write("<br><br><div id=title style=width:500px;align:center;bg-color:silver;font-size:22px;font-family:verdana>Brett's Car-o-rama!</div><br>")
 response.write("<br><br><div id=main style=width:500px;align:center;bg-color:silver;font-size:22px;font-family:verdana>")
 
 response.write("Here's some stuff!")
 
 response.write("</div>")
-response.write("<div id=footer style=width:500px;align:center;bg-color:silver;font-size:22px;font-family:verdana>")
-response.write("<form name=myf1 ><table><tr><td>name</td><td><input name=key><input type=hidden name=o value='p'></td></tr><tr><td>make</td><td><input name=make></td></tr><tr><td>model</td><td><input name=model></td></tr><tr><td>year</td><td><input name=year></td></tr><tr><td>color</td><td><input name=color></td></tr><tr><td colspan=2><input type=submit></td></tr></table></form>");
+response.write("<div ng-controller=\"ExampleController\" id=footer style=width:500px;align:center;bg-color:silver;font-size:22px;font-family:verdana>")
+response.write("<form  novalidate class=\"simple-form\" name=myf1 ><table><tr><td>name</td><td><input name=key ng-model=\"carz.key\"><input type=hidden name=o value='p'  ng-model=\"carz.o\"></td></tr><tr><td>make</td><td><input name=make  ng-model=\"carz.make\"></td></tr><tr><td>model</td><td><input name=model  ng-model=\"carz.model\"></td></tr><tr><td>year</td><td><input name=year  ng-model=\"carz.year\"></td></tr><tr><td>color</td><td><input name=color  ng-model=\"carz.color\"></td></tr><tr><td colspan=2><input type=submit  ng-click="update(carz)" value="Save" ></td></tr></table></form>");
 response.write("</div>")
+
+response.write("<pre>user = {{user | json}}</pre><br>  <pre>master = {{master | json}}</pre>");
 response.end();
     
     
