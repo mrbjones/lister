@@ -66,21 +66,15 @@ response.write("Here's some stuff!")
 response.write("</div>")
 response.write("<div ng-controller=\"ExampleController\" id=footer>")
 
-response.write("<form  novalidate class=\"simple-form\" ><table><tr><td>name</td><td><input name=key ng-model=\"carz.key\"><input style=display:none; name=o value='p'  ng-model=\"carz.o\"></td></tr><tr><td>make</td><td><input name=make  ng-model=\"carz.make\"></td></tr><tr><td>model</td><td><input name=model  ng-model=\"carz.model\"></td></tr><tr><td>year</td><td><input name=year  ng-model=\"carz.year\"></td></tr><tr><td>color</td><td><input name=color  ng-model=\"carz.color\"></td></tr><tr><td colspan=2><input type=submit  ng-click=\"update(carz)\" value=\"Save\" ></td></tr></table></form>");
+response.write("<form  novalidate class=\"simple-form\" ><table><tr><td>name</td><td><input name=key ng-model=\"carz.key\"><input style=display:none; name=o value='p'  ng-model=\"carz.o\"></td></tr><tr><td>make</td><td><input name=make  ng-model=\"carz.make\"></td></tr><tr><td>model</td><td><input name=model  ng-model=\"carz.model\"></td></tr><tr><td>year</td><td><input name=year  ng-model=\"carz.year\"></td></tr><tr><td>color</td><td><input name=color  ng-model=\"carz.color\"></td></tr><tr><td colspan=2><input type=button  ng-click=\"update(carz)\" value=\"Save\" ></td></tr></table></form>");
 /*
 response.write("<form  novalidate class=\"simple-form\" >name<input name=key ng-model=\"carz.key\"><input type=hidden name=o value='p'  ng-model=\"carz.o\">make<input name=make  ng-model=\"carz.make\">model<input name=model  ng-model=\"carz.model\">year<input name=year  ng-model=\"carz.year\">color<input name=color  ng-model=\"carz.color\"><input type=button  ng-click=\"update(carz)\" value=\"Save\" ></form>");
-*/
-
-
-response.write("<pre>user = {{carz | json}}</pre><br>  <pre>master = {{master | json}}</pre>");
-response.write("</div>")
-/*
 response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {   $scope.master = {};$scope.update = function(carz) { $scope.master = angular.copy(carz);};$scope.reset = function() {   $scope.carz = angular.copy($scope.master);}; $scope.reset();}]);</script>");
-
-
 response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {$scope.update = function(carz) { var k1 = angular.copy(carz.key);   var m1 = angular.copy(carz.make);  var m2 = angular.copy(carz.model);  var c1 = angular.copy(carz.color); var y1= angular.copy(carz.year);     };     }]);")
 */
-response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {$scope.update = function(carz) { $http({     url: user.details_path,     method: \"GET\",    params: {o: 'p', key=carz.key, make=carz.make, model=carz.model, color=carz.color, year=carz.year} });     }]);")
+
+response.write("</div>")
+response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {$scope.update = function(carz) { $http({     url: user.details_path,     method: \"GET\",    params: {o: 'p', key=carz.key.value, make=carz.make.value, model=carz.model.value, color=carz.color, year=carz.year.value} });     }]);")
 
 
 
