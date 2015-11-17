@@ -74,7 +74,7 @@ response.write("<script>  angular.module('formExample', [])    .controller('Exam
 */
 
 response.write("</div>")
-response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) { $scope.update = function(carz) {var m1=carz.make; alert(m1);  });     }]);")
+response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) { $scope.master = {}; $scope.update = function(carz) {var m1=carz.make; alert(m1);  });     }]);")
 
 
 
