@@ -60,7 +60,7 @@ response.write("<!doctype html><html lang=\"en\"><head>  <meta charset=\"UTF-8\"
 response.write("</head><body ng-app=\"formExample\">");
 response.write("<br><br><div id=title>Brett's Car-o-rama!</div><br>")
 response.write("<br><br><div id=main ng-controller=\"listOfCarz\" >")
-
+response.write("<div ng-bind=\"listcarz\"><div>")
 response.write("Here's some stuff!")
 
 response.write("</div>")
