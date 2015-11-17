@@ -78,7 +78,7 @@ response.write("</div>")
 response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', function($scope) {$scope.update = function(carz) { $http({ url: 'http://btjweb1.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'p', key: $scope.carz.key, make: $scope.carz.make, model: $scope.carz.model, color: $scope.carz.color, year: $scope.carz.year} });   };     }]);")
 
 
-
+response.write("</script>")
 response.end();
     
     
