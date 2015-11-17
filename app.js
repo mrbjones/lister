@@ -76,10 +76,10 @@ response.write("<script>  angular.module('formExample', [])    .controller('Exam
 
 response.write("</div>")
 response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', '$http', function($scope,$http) {$scope.update = function(carz) { $http({ url: 'http://btjweb1.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'p', key: $scope.carz.key, make: $scope.carz.make, model: $scope.carz.model, color: $scope.carz.color, year: $scope.carz.year} }).success(function(data, status, headers, config) { alert(data) });   };     }]);")
-response.write("</script>")
 
-/*
-response.write("<script>  angular.module('formExample', [])    .controller('listOfCarz', ['$scope', '$http', function($scope,$http) {$scope.init = function(listcarz)  { $http({ url: 'http://btjweb1.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data, status, headers, config) { alert(data) });   };     }]);")
+
+
+response.write("  angular.module('formExample', [])    .controller('listOfCarz', ['$scope', '$http', function($scope,$http) {$scope.init = function(listcarz)  { $http({ url: 'http://btjweb1.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data, status, headers, config) { alert(data) });   };     }]);")
 response.write("</script>")
 */
 response.end();
