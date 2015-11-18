@@ -59,8 +59,9 @@ response.write("<!doctype html><html lang=\"en\"><head>  <meta charset=\"UTF-8\"
 
 response.write("</head><body ng-app=\"formExample\">");
 response.write("<br><br><div id=title>Brett's Car-o-rama!</div><br>")
-response.write("<br><br><div id=main >")
+response.write("<br><br><div id=main ng-controller=\"ListCarz\">")
 response.write("<div ></div>")
+response.write("<input type=button value='Press Me!' ng-click=\"update(listcarz)\">")
 response.write("Here's some stuff!")
 
 response.write("</div>")
@@ -79,6 +80,9 @@ response.write("</div>")
 
 
 response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', '$http', function($scope,$http) {$scope.update = function(carz)  { $http({ url: 'http://btjweb1.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'p',key: carz.key, make: carz.make, model: carz.model, color: carz.color, year:carz.year}}).success(function(data, status, headers, config) { alert(data) });   };     }]);")
+response.write("</script>")
+
+response.write("<script>  angular.module('formExample', [])    .controller('ListCarz', ['$scope', '$http', function($scope,$http) {$scope.update = function(listcarz)  { $http({ url: 'http://btjweb1.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data, status, headers, config) { alert(data) });   };     }]);")
 response.write("</script>")
 
 response.end();
