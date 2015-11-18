@@ -55,7 +55,7 @@ if (queryData.o !="p" && queryData.o !="g")
 {
 response.writeHeader(200, {"Content-Type": "text/html"});
 response.write("<!doctype html><html lang=\"en\"><head>  <meta charset=\"UTF-8\"><html><head><title>Brett's Car-o-rama!</title>  <script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js\"></script>");
-
+response.write("<script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-sanitize.js\"></script>")
 
 response.write("</head><body>");
 response.write("<br><br><div id=title>Brett's Car-o-rama!</div><br>")
