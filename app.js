@@ -59,8 +59,8 @@ response.write("<!doctype html><html lang=\"en\"><head>  <meta charset=\"UTF-8\"
 
 response.write("</head><body ng-app=\"formExample\">");
 response.write("<br><br><div id=title>Brett's Car-o-rama!</div><br>")
-response.write("<br><br><div id=main ng-controller=\"listOfCarz\" >")
-response.write("<div ng-bind=\"listcarz\"><div>")
+response.write("<br><br><div id=main " >")
+response.write("<div ><div>")
 response.write("Here's some stuff!")
 
 response.write("</div>")
@@ -75,7 +75,6 @@ response.write("<script>  angular.module('formExample', [])    .controller('Exam
 */
 
 response.write("</div>")
-response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', '$http', function($scope,$http) {$scope.update = function(carz) { $http({ url: 'http://btjweb1.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'p', key: $scope.carz.key, make: $scope.carz.make, model: $scope.carz.model, color: $scope.carz.color, year: $scope.carz.year} }).success(function(data, status, headers, config) { alert(data) });   };     }]);")
 
 
 
