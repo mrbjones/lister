@@ -78,7 +78,7 @@ response.write("</div>")
 
 
 
-response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', '$http', function($scope,$http) {$scope.init = function(carz)  { $http({ url: 'http://btjweb1.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'p',key: carz.key, make: carz.make, model: carz.model, color: carz.color, year:carz.year}}).success(function(data, status, headers, config) { alert(data) });   };     }]);")
+response.write("<script>  angular.module('formExample', [])    .controller('ExampleController', ['$scope', '$http', function($scope,$http) {$scope.update = function(carz)  { $http({ url: 'http://btjweb1.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'p',key: carz.key, make: carz.make, model: carz.model, color: carz.color, year:carz.year}}).success(function(data, status, headers, config) { alert(data) });   };     }]);")
 response.write("</script>")
 
 response.end();
