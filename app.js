@@ -65,7 +65,7 @@ response.write("<input type=button value='Press Me!' ng-click=\"update(listcarz)
 response.write("Here's some stuff!")
 
 response.write("</div>")
-response.write("<div ng-app=\"putter\ ng-controller=\"ExampleController\" id=footer>")
+response.write("<div ng-app=\"putter\" ng-controller=\"ExampleController\" id=footer>")
 
 response.write("<form  novalidate class=\"simple-form\" ><table><tr><td>name</td><td><input ng-model=\"carz.key\"><input style=display:none;  value='p'  ng-model=\"carz.o\"></td></tr><tr><td>make</td><td><input  ng-model=\"carz.make\"></td></tr><tr><td>model</td><td><input  ng-model=\"carz.model\"></td></tr><tr><td>year</td><td><input  ng-model=\"carz.year\"></td></tr><tr><td>color</td><td><input  ng-model=\"carz.color\"></td></tr><tr><td colspan=2><input type=button  ng-click=\"update(carz)\" value=\"Save\" ></td></tr></table></form>");
 /*
