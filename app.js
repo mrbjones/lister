@@ -60,7 +60,7 @@ response.write("<script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-be
 response.write("</head><body>");
 response.write("<br><br><div id=title>Brett's Car-o-rama!</div><br>")
 response.write("<br><br><div  ng-app=\"getter\" id=main ng-controller=\"ListCarz\">")
-response.write("<div ng-bind-html=\"carslist\" ng-init=\"update(carslist)\"></div>")
+response.write("<div ng-bind=\"carslist\" ng-init=\"update(carslist)\"></div>")
 
 response.write("Here's some stuff!")
 
