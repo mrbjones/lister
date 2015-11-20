@@ -28,7 +28,7 @@ db.list('cars')
   cb(JSON.stringify(items, ['path', 'key', 'value', 'make', 'model', 'year', 'color']));
 })};
 
-function remover(keyer) {
+function remover(keyer, cb) {
 db.remove('cars', keyer, true);
  cb("successfully removed :!");
 };
