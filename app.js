@@ -60,10 +60,10 @@ response.write("<script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-be
 response.write("</head><body>");
 response.write("<br><br><div id=title>Brett's Car-o-rama!</div><br>")
 response.write("<br><br><div  ng-app=\"getter\" id=main ng-controller=\"ListCarz\">")
-response.write("<div ng-init=\"update(carslist)\"></div>")
+response.write("<div ng-init=\"update()\"></div>")
 
 response.write("<table><tr><td>details</td></tr><tr ng-repeat=\"car in carslist\">")
-response.write("<td>{{car.make}}</td>")
+response.write("<td>{{car.value.make}}</td>")
 response.write("</tr></table>")
 
 response.write("Here's some stuff!")
@@ -86,7 +86,7 @@ response.write("</div>")
 response.write("<script>  angular.module('putter', [])    .controller('ExampleController', ['$scope', '$http', function($scope,$http) {$scope.update = function(carz)  { $http({ url: 'http://btjweb2.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'p',key: carz.key, make: carz.make, model: carz.model, color: carz.color, year:carz.year}}).success(function(data, status, headers, config) { alert(data) });   };     }]);")
 response.write("</script>")
 
-response.write("<script>  angular.module('getter', [])    .controller('ListCarz', ['$scope', '$http', function($scope,$http) {$scope.update = function(carslist)  { $http({ url: 'http://btjweb2.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data) {$scope.carslist=[]; $scope.carslist=data });   };     }]);")
+response.write("<script>  angular.module('getter', [])    .controller('ListCarz', ['$scope', '$http', function($scope,$http) {$scope.update = function()  { $http({ url: 'http://btjweb2.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data) {$scope.carslist=[]; $scope.carslist=data });   };     }]);")
 response.write("</script>")
 
 response.end();
