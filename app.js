@@ -63,14 +63,13 @@ response.write("<br><br><div   id=main ng-controller=\"ListCarz\">")
 response.write("<div ng-init=\"listcars()\"></div>")
 
 response.write("<table><tr ng-repeat=\"car in carslist\">")
-/*
+
 response.write("<td>{{car.path.key}}</td>")
-*/
 response.write("<td>{{car.value.make}}</td>")
 response.write("<td>{{car.value.model}}</td>")
 response.write("<td>{{car.value.year}}</td>")
 response.write("<td>{{car.value.color}}</td>")
-response.write("<td><button ng-click=deleter({{car.path.key}}) name='Delete!'>")
+response.write("<td><button ng-click=\"deleter(car)\" name='Delete!' value='Delete!'>")
 response.write("</tr></table>")
 
 
@@ -84,7 +83,7 @@ response.write("</div>")
 
 response.write("<script>var myApp=angular.module('putter', []);")
 response.write("myApp.controller('ExampleController', ['$scope', '$http', function($scope,$http) {$scope.update = function(carz)  { $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'p',key: carz.key, make: carz.make, model: carz.model, color: carz.color, year:carz.year}}).success(function(data, status, headers, config) { $scope.responder=data });   };     }]);")
-response.write("myApp.controller('ListCarz', ['$scope', '$http', function($scope,$http) {$scope.listcars = function()  { $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data) {$scope.carslist=[]; $scope.carslist=data }); $scope.deleter= function(k){ $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data, status, headers, config) { alert(\"|\" +k) });   };  };     }]);")
+response.write("myApp.controller('ListCarz', ['$scope', '$http', function($scope,$http) {$scope.listcars = function()  { $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data) {$scope.carslist=[]; $scope.carslist=data }); $scope.deleter= function(car){ $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data, status, headers, config) { alert(\"|\" + car.path.key) });   };  };     }]);")
 response.write("</script>")
 
 response.end();
