@@ -69,7 +69,7 @@ response.write("<td>{{car.value.model}}</td>")
 response.write("<td>{{car.value.year}}</td>")
 response.write("<td>{{car.value.color}}</td>")
 response.write("</tr></table>")
-response.write("<button ng-click=\"delete()\"")
+response.write("<button ng-click=\"deleter('st1')\"")
 
 response.write("</div>")
 response.write("<div  ng-controller=\"ExampleController\" id=footer>")
@@ -81,7 +81,7 @@ response.write("</div>")
 
 response.write("<script>var myApp=angular.module('putter', []);")
 response.write("myApp.controller('ExampleController', ['$scope', '$http', function($scope,$http) {$scope.update = function(carz)  { $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'p',key: carz.key, make: carz.make, model: carz.model, color: carz.color, year:carz.year}}).success(function(data, status, headers, config) { $scope.responder=data });   };     }]);")
-response.write("myApp.controller('ListCarz', ['$scope', '$http', function($scope,$http) {$scope.listcars = function()  { $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data) {$scope.carslist=[]; $scope.carslist=data }); $scope.deleter= function(key){ $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data, status, headers, config) { $scope.responder=data });   };  };     }]);")
+response.write("myApp.controller('ListCarz', ['$scope', '$http', function($scope,$http) {$scope.listcars = function()  { $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data) {$scope.carslist=[]; $scope.carslist=data }); $scope.deleter= function(k){ $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data, status, headers, config) { alert(\"|\" +k) });   };  };     }]);")
 response.write("</script>")
 
 response.end();
