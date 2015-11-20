@@ -68,12 +68,12 @@ if (queryData.o =="p" || queryData.o =="g")
 if (queryData.o !="p" && queryData.o !="g" && queryData.o !="d")
 {
 response.writeHeader(200, {"Content-Type": "text/html"});
-response.write("<!doctype html><html lang=\"en\"><head>  <meta charset=\"UTF-8\"><html><head><title>Brett's Car-o-rama!</title>  <script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js\"></script>");
+response.write("<!doctype html><html lang=\"en\"><head>  <meta charset=\"UTF-8\"><html><head><title>Brett's Cars!</title>  <script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js\"></script>");
 response.write("<script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-sanitize.js\"></script>")
 
-response.write("</head><body ng-app=\"putter\">");
+response.write("</head><body ng-app=\"putter\"><center>");
 response.write("<br><br><div id=title>BTJ's Cars</div><br>")
-response.write("<br><br><div   id=main ng-controller=\"ListCarz\">")
+response.write("<div   id=main ng-controller=\"ListCarz\">")
 response.write("<div ng-init=\"listcars()\"></div>")
 
 response.write("<table><tr ng-repeat=\"car in carslist\">")
@@ -83,15 +83,16 @@ response.write("<td>{{car.value.make}}</td>")
 response.write("<td>{{car.value.model}}</td>")
 response.write("<td>{{car.value.year}}</td>")
 response.write("<td>{{car.value.color}}</td>")
-response.write("<td><button ng-click=\"deleter(car)\" name='Delete!' value='Delete!'>")
+response.write("<td><input type=button ng-click=\"deleter(car)\" name='X' value='X'>")
 response.write("</tr></table>")
 
 
 response.write("</div>")
+response.write("<hr>")
 response.write("<div  ng-controller=\"ExampleController\" id=footer>")
 
 response.write("<form  novalidate class=\"simple-form\" ><table><tr><td>name</td><td><input ng-model=\"carz.key\"><input style=display:none;  value='p'  ng-model=\"carz.o\"></td></tr><tr><td>make</td><td><input  ng-model=\"carz.make\"></td></tr><tr><td>model</td><td><input  ng-model=\"carz.model\"></td></tr><tr><td>year</td><td><input  ng-model=\"carz.year\"></td></tr><tr><td>color</td><td><input  ng-model=\"carz.color\"></td></tr><tr><td colspan=2><input type=button  ng-click=\"update(carz)\" value=\"Save\" ></td></tr><tr><td ng-bind=\"responder\"></td></tr></table></form>");
-response.write("</div>")
+response.write("</div></center></body>")
 
 
 
