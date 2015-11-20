@@ -28,6 +28,12 @@ db.list('cars')
   cb(JSON.stringify(items, ['path', 'key', 'value', 'make', 'model', 'year', 'color']));
 })};
 
+function remover(keyer) {
+db.remove('cars', keyer, true);
+ cb("successfully removed :!");
+};
+
+
 http.createServer(function(request, response) {
     var queryData = url.parse(request.url, true).query;
 /*
@@ -51,7 +57,15 @@ if (queryData.o =="p" || queryData.o =="g")
  { response.write(resp);response.end();
  });
 } 
-if (queryData.o !="p" && queryData.o !="g")
+
+  if (queryData.o == "d")
+  {
+  ckey=queryData.key
+ remover(ckey, function(resp)
+ { response.write(resp);response.end();
+ });
+}
+if (queryData.o !="p" && queryData.o !="g" && queryData.o !="d")
 {
 response.writeHeader(200, {"Content-Type": "text/html"});
 response.write("<!doctype html><html lang=\"en\"><head>  <meta charset=\"UTF-8\"><html><head><title>Brett's Car-o-rama!</title>  <script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js\"></script>");
@@ -83,7 +97,8 @@ response.write("</div>")
 
 response.write("<script>var myApp=angular.module('putter', []);")
 response.write("myApp.controller('ExampleController', ['$scope', '$http', function($scope,$http) {$scope.update = function(carz)  { $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'p',key: carz.key, make: carz.make, model: carz.model, color: carz.color, year:carz.year}}).success(function(data, status, headers, config) { $scope.responder=data });   };     }]);")
-response.write("myApp.controller('ListCarz', ['$scope', '$http', function($scope,$http) {$scope.listcars = function()  { $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data) {$scope.carslist=[]; $scope.carslist=data }); $scope.deleter= function(car){ $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data, status, headers, config) { alert(\"|\" + car.path.key) });   };  };     }]);")
+response.write("myApp.controller('ListCarz', ['$scope', '$http', function($scope,$http) {$scope.listcars = function()  { $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data) {$scope.carslist=[]; $scope.carslist=data });")
+response.write(" $scope.deleter= function(car){ $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'd', key: car.path.key}}).success(function(data, status, headers, config) { alert(\"|\" + car.path.key) });   };  };     }]);")
 response.write("</script>")
 
 response.end();
