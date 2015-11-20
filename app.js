@@ -86,7 +86,7 @@ response.write("</div>")
 response.write("<script>  angular.module('putter', [])    .controller('ExampleController', ['$scope', '$http', function($scope,$http) {$scope.update = function(carz)  { $http({ url: 'http://btjweb2.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'p',key: carz.key, make: carz.make, model: carz.model, color: carz.color, year:carz.year}}).success(function(data, status, headers, config) { alert(data) });   };     }]);")
 response.write("</script>")
 
-response.write("<script>  angular.module('getter', [])    .controller('ListCarz', ['$scope', '$http', function($scope,$http) {$scope.update = function(carslist)  { $http({ url: 'http://btjweb2.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data) {  $scope.carslist = angular.fromJSON(data) });   };     }]);")
+response.write("<script>  angular.module('getter', [])    .controller('ListCarz', ['$scope', '$http', function($scope,$http) {$scope.update = function(carslist)  { $http({ url: 'http://btjweb2.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data) {  $scope.carslist = JSON.parse(data) });   };     }]);")
 response.write("</script>")
 
 response.end();
