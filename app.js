@@ -61,7 +61,9 @@ response.write("</head><body>");
 response.write("<br><br><div id=title>Brett's Car-o-rama!</div><br>")
 response.write("<br><br><div  ng-app=\"getter\" id=main ng-controller=\"ListCarz\">")
 response.write("<div ng-bind=\"carslist\" ng-init=\"update(carslist)\"></div>")
-
+response.write("<table><tr ng-repeat=\"for each car in carslist\">")
+response.write("<td>{{car.make}}</td>")
+response.write("</tr></table>")
 response.write("Here's some stuff!")
 
 response.write("</div>")
