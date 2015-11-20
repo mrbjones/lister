@@ -91,7 +91,7 @@ response.write("</tr></table>")
 response.write("</div>")
 response.write("<hr>")
 
-response.write("<a onclick=document.getElementById(\"footer\").style.display = \"block\";>Insert a new record</a>")
+response.write("<a onclick='document.getElementById(\"footer\").style.display=\"block\";' style=\"cursor: pointer;\">Insert a new record</a>")
 response.write("<div  ng-controller=\"ExampleController\" id=footer style=display:none;>")
 
 response.write("<form  novalidate class=\"simple-form\" ><table><tr><td>name</td><td><input ng-model=\"carz.key\"><input style=display:none;  value='p'  ng-model=\"carz.o\"></td></tr><tr><td>make</td><td><input  ng-model=\"carz.make\"></td></tr><tr><td>model</td><td><input  ng-model=\"carz.model\"></td></tr><tr><td>year</td><td><input  ng-model=\"carz.year\"></td></tr><tr><td>color</td><td><input  ng-model=\"carz.color\"></td></tr><tr><td colspan=2><input type=button  ng-click=\"update(carz)\" value=\"Save\" ></td></tr><tr><td ng-bind=\"responder\"></td></tr></table></form>");
