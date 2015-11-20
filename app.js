@@ -63,12 +63,14 @@ response.write("<br><br><div   id=main ng-controller=\"ListCarz\">")
 response.write("<div ng-init=\"listcars()\"></div>")
 
 response.write("<table><tr ng-repeat=\"car in carslist\">")
+/*
 response.write("<td>{{car.path.key}}</td>")
+*/
 response.write("<td>{{car.value.make}}</td>")
 response.write("<td>{{car.value.model}}</td>")
 response.write("<td>{{car.value.year}}</td>")
 response.write("<td>{{car.value.color}}</td>")
-response.write("<td><button ng-click=\"deleter({{car.path.key}})\" name='Delete!'>")
+response.write("<td><button ng-click=deleter({{car.path.key}}) name='Delete!'>")
 response.write("</tr></table>")
 
 
