@@ -68,7 +68,7 @@ response.write("<td>{{car.value.make}}</td>")
 response.write("<td>{{car.value.model}}</td>")
 response.write("<td>{{car.value.year}}</td>")
 response.write("<td>{{car.value.color}}</td>")
-response.write("<td><button ng-click=\"deleter('{{car.path.key}}')\" value='Delete!'>")
+response.write("<td><button ng-click=\"deleter({{car.path.key}})\" name='Delete!'>")
 response.write("</tr></table>")
 
 
