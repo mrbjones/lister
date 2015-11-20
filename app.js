@@ -69,6 +69,7 @@ response.write("<td>{{car.value.model}}</td>")
 response.write("<td>{{car.value.year}}</td>")
 response.write("<td>{{car.value.color}}</td>")
 response.write("</tr></table>")
+response.write("<button ng-click=\"delete()\"")
 
 response.write("</div>")
 response.write("<div  ng-controller=\"ExampleController\" id=footer>")
