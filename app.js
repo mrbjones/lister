@@ -116,7 +116,7 @@ response.write(" $scope.deleter= function(car){ if (window.confirm(\"Really Dele
 response.write("</script>")
 */
 response.write("<script>var myApp=angular.module('putter', []);")
-response.write("myApp.controller('listCarz', ['$scope', '$http', function($scope,$http) {")
+response.write("myApp.controller('ListCarz', ['$scope', '$http', function($scope,$http) {")
 response.write(" $scope.listcars = function()  { $http({ url: 'http://btjweb4.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data) {$scope.carslist=[]; $scope.carslist=data }); };")
 /*
 response.write(" $scope.update = function(carz)  { $http({ url: 'http://btjweb4.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'p',key: carz.key, make: carz.make, model: carz.model, color: carz.color, year:carz.year}}).success(function(data, status, headers, config) {$scope.listcars(); $scope.$apply });   };    ")
