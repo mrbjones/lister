@@ -116,9 +116,9 @@ response.write(" $scope.deleter= function(car){ if (window.confirm(\"Really Dele
 response.write("</script>")
 */
 response.write("<script>var myApp=angular.module('putter', []);")
-response.write("myApp.controller('listCars', ['$scope', '$http', function($scope,$http) {$scope.update = function(carz)  { $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'p',key: carz.key, make: carz.make, model: carz.model, color: carz.color, year:carz.year}}).success(function(data, status, headers, config) {$scope.listcars(); $scope.$apply });   };     ")
-response.write(" $scope.listcars = function()  { $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data) {$scope.carslist=[]; $scope.carslist=data });")
-response.write(" $scope.deleter= function(car){ if (window.confirm(\"Really Delete?\")) {  $http({ url: 'http://btjweb3.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'd', key: car.path.key}}).success(function(data, status, headers, config) { $scope.listcars(); $scope.$apply  });   }; };  };     }]);")
+response.write("myApp.controller('listCars', ['$scope', '$http', function($scope,$http) {$scope.update = function(carz)  { $http({ url: 'http://btjweb4.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'p',key: carz.key, make: carz.make, model: carz.model, color: carz.color, year:carz.year}}).success(function(data, status, headers, config) {$scope.listcars(); $scope.$apply });   };     ")
+response.write(" $scope.listcars = function()  { $http({ url: 'http://btjweb4.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'g'}}).success(function(data) {$scope.carslist=[]; $scope.carslist=data });")
+response.write(" $scope.deleter= function(car){ if (window.confirm(\"Really Delete?\")) {  $http({ url: 'http://btjweb4.uswest.appfog.ctl.io/app.js',    method: \"GET\",    params: {o: 'd', key: car.path.key}}).success(function(data, status, headers, config) { $scope.listcars(); $scope.$apply  });   }; };  };     }]);")
 response.write("</script>")
 
 
