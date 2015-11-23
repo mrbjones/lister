@@ -66,8 +66,9 @@ if (queryData.o !="p" && queryData.o !="g" && queryData.o !="d")
 response.writeHeader(200, {"Content-Type": "text/html"});
 response.write("<!doctype html><html lang=\"en\"><head>  <meta charset=\"UTF-8\"><html><head><title>Brett's Cars!</title>  <script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js\"></script>");
 response.write("<script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-sanitize.js\"></script>")
+/*
 response.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"freestyler.css\" media=\"screen\" />")
-
+*/
 response.write("</head><body ng-app=\"putter\" style=font-family:verdana;font-size:11px><center>");
 response.write("<br><br><div id=title>BTJ's Cars</div><br>")
 
